@@ -1,0 +1,1 @@
+mkcert -key-file ssl_certificate.key -cert-file ssl_certificate.crt koku 192.168.178.37 localhost 127.0.0.1 ::1
