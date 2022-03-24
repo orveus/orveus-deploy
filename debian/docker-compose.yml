@@ -1,3 +1,5 @@
+# orveus version 2022-03-24
+
 version: '3.9'
 
 services:
@@ -55,14 +57,14 @@ services:
     image: mcr.microsoft.com/mssql/server:2019-CU14-ubuntu-20.04
     restart: always
     ports:
-      - "1434:1433"
+      - "1435:1433"
     expose:
       - 1433
-    command: /bin/sh -c "(/opt/mssql/bin/sqlservr &) && sleep 50s && /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P $${SA_PASSWORD} -d master -Q 'CREATE DATABASE orveus;' && sleep infinity"
+    command: /bin/sh -c "(/opt/mssql/bin/sqlservr &) && sleep 120s && /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P $${SA_PASSWORD} -d master -Q 'CREATE DATABASE orveus;' && sleep infinity"
     healthcheck:
-      test: /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P $${SA_PASSWORD} -Q "SELECT 1" -b -o /dev/null
+      test: /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P $${SA_PASSWORD} -d orveus -Q "SELECT 1" -b -o /dev/null
       interval: 10s
-      timeout: 2s
+      timeout: 5s
       retries: 100
       start_period: 60s
     environment:
@@ -75,4 +77,3 @@ services:
       - ./database/data:/var/opt/mssql/data
       - ./database/log:/var/opt/mssql/log
       - ./database/secrets:/var/opt/mssql/secrets
-
