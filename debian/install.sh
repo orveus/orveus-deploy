@@ -63,6 +63,10 @@ echo "downloading docker-compose.yml"
 
 curl --retry 3 https://raw.githubusercontent.com/domschmidt/orveus-deploy/main/debian/docker-compose.yml > docker-compose.yml
 
+echo "downloading ssl.sh"
+
+curl --retry 3 https://raw.githubusercontent.com/domschmidt/orveus-deploy/main/debian/ssl.sh > ssl
+
 echo "requesting docker login"
 
 sudo docker login
