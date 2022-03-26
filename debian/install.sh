@@ -65,7 +65,9 @@ curl --retry 3 https://raw.githubusercontent.com/domschmidt/orveus-deploy/main/d
 
 echo "downloading ssl.sh"
 
-curl --retry 3 https://raw.githubusercontent.com/domschmidt/orveus-deploy/main/debian/ssl.sh > ssl
+curl --retry 3 https://raw.githubusercontent.com/domschmidt/orveus-deploy/main/debian/ssl.sh > ssl.sh
+
+sudo chmod +x ssl.sh
 
 echo "requesting docker login"
 
