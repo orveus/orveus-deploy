@@ -41,31 +41,31 @@ mkdir ssl || "ssl directory exists already"
 
 echo "downloading dummy certificate.crt"
 
-curl --retry 3 https://raw.githubusercontent.com/domschmidt/orveus-deploy/main/ssl/ssl_certificate.crt > ssl/ssl_certificate.crt
+curl --retry 3 https://raw.githubusercontent.com/orveus/orveus-deploy/main/ssl/ssl_certificate.crt > ssl/ssl_certificate.crt
 
 echo "downloading dummy certificate.key"
 
-curl --retry 3 https://raw.githubusercontent.com/domschmidt/orveus-deploy/main/ssl/ssl_certificate.key > ssl/ssl_certificate.key
+curl --retry 3 https://raw.githubusercontent.com/orveus/orveus-deploy/main/ssl/ssl_certificate.key > ssl/ssl_certificate.key
 
 echo "downloading backup script"
 
-curl --retry 3 https://raw.githubusercontent.com/domschmidt/orveus-deploy/main/debian/backup.sh > backup.sh
+curl --retry 3 https://raw.githubusercontent.com/orveus/orveus-deploy/main/debian/backup.sh > backup.sh
 
 sudo chmod +x backup.sh
 
 echo "downloading restore script"
 
-curl --retry 3 https://raw.githubusercontent.com/domschmidt/orveus-deploy/main/debian/restore.sh > restore.sh
+curl --retry 3 https://raw.githubusercontent.com/orveus/orveus-deploy/main/debian/restore.sh > restore.sh
 
 sudo chmod +x restore.sh
 
 echo "downloading docker-compose.yml"
 
-curl --retry 3 https://raw.githubusercontent.com/domschmidt/orveus-deploy/main/debian/docker-compose.yml > docker-compose.yml
+curl --retry 3 https://raw.githubusercontent.com/orveus/orveus-deploy/main/debian/docker-compose.yml > docker-compose.yml
 
 echo "downloading ssl.sh"
 
-curl --retry 3 https://raw.githubusercontent.com/domschmidt/orveus-deploy/main/debian/ssl.sh > ssl.sh
+curl --retry 3 https://raw.githubusercontent.com/orveus/orveus-deploy/main/debian/ssl.sh > ssl.sh
 
 sudo chmod +x ssl.sh
 
