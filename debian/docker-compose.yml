@@ -45,7 +45,7 @@ services:
       db:
         condition: service_healthy
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:sqlserver://db:1433;databaseName=orveus
+      - SPRING_DATASOURCE_URL=jdbc:sqlserver://db:1433;databaseName=orveus;encrypt=true;trustServerCertificate=true
       - SPRING_DATASOURCE_USERNAME=sa
       - SPRING_DATASOURCE_PASSWORD=Z87hQ2vQtNt9xq5UMUa6DVD5N
       - SPRING_JPA_HIBERNATE_DDL_AUTO=none
